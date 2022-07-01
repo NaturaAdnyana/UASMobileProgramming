@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView   xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".LoginActivity"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="16dp"
+        >
+
+        <ImageView
+            android:src="@drawable/logo_instiki"
+            android:layout_width="@dimen/img_md"
+            android:layout_height="@dimen/img_md"
+            android:layout_marginTop="30dp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Masuk dengan NIM"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="10dp"
+            android:text="Nim Mahasiswa"
+            android:textSize="15sp"
+            android:textColor="@color/primary"
+            android:background="@color/white"
+            />
+
+        <EditText
+            android:id="@+id/nim_login_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:padding="15dp"
+            android:inputType="phone"
+            android:hint="NIM"
+            android:background="@drawable/border_primary"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="10dp"
+            android:text="Password"
+            android:textSize="15sp"
+            android:textColor="@color/primary"
+            android:background="@color/white"
+            />
+
+        <EditText
+            android:id="@+id/password_login_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:padding="15dp"
+            android:inputType="textPassword"
+            android:hint="Password"
+            android:background="@drawable/border_primary"/>
+
+
+        <Button
+            android:id="@+id/button_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:drawableEnd="@drawable/login_icon"
+            android:text="Login"
+            app:backgroundTint="@color/primary" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Belum punya akun? "
+                android:textSize="15sp"
+                android:textColor="@color/black"
+                />
+
+            <TextView
+                android:id="@+id/register_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Registrasi disini"
+                android:textSize="15sp"
+                android:textColor="@color/teal_700"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>
