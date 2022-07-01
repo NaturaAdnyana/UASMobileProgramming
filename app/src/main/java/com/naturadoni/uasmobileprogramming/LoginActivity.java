@@ -16,7 +16,7 @@ import com.naturadoni.uasmobileprogramming.mahasiswa.MahasiswaModel;
 public class LoginActivity extends AppCompatActivity {
     EditText nimLoginET, passwordLoginET;
     Button btnLogin;
-    TextView register;
+    TextView btnRegister;
     MahasiswaDBHelper db;
 
 
@@ -29,6 +29,7 @@ public class LoginActivity extends AppCompatActivity {
         nimLoginET = findViewById(R.id.nim_login_edittext);
         passwordLoginET = findViewById(R.id.password_login_edittext);
         btnLogin = findViewById(R.id.button_login);
+        btnRegister = findViewById(R.id.register_btn);
 
         db = new MahasiswaDBHelper(this);
 
@@ -43,8 +44,6 @@ public class LoginActivity extends AppCompatActivity {
                 if(mhs == null){
                     Toast.makeText(LoginActivity.this, "mahasiswa tidak ditemukan", Toast.LENGTH_LONG).show();
                     return;
-//                    Intent homeIntent = new Intent(LoginActivity.this, HomeActivity.class);
-//                    startActivity(homeIntent);
                 }
 
                 if(mhs.getPassword().equals(password)) {
@@ -55,6 +54,14 @@ public class LoginActivity extends AppCompatActivity {
 
             }
 
+        });
+
+        btnRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent registerIntent = new Intent(LoginActivity.this, RegisterActivity.class);
+                startActivity(registerIntent);
+            }
         });
     }
 }
