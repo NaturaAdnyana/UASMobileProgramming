@@ -2,26 +2,26 @@ package com.naturadoni.uasmobileprogramming.mahasiswa;
 
 public class MahasiswaModel {
     private int id;
-    private String username;
-    private String fullname;
-    private String password;
+    private String firstname;
+    private String lastname;
     private String nim;
+    private String password;
 
     public MahasiswaModel() {}
 
-    public MahasiswaModel(String username, String fullname, String password, String nim) {
-        this.username = username;
-        this.fullname = fullname;
-        this.password = password;
+    public MahasiswaModel(String firstname, String lastname, String nim, String password) {
+        this.firstname = firstname;
+        this.lastname = lastname;
         this.nim = nim;
+        this.password = password;
     }
 
-    public MahasiswaModel(int id, String username, String fullname, String password, String nim) {
+    public MahasiswaModel(int id, String firstname, String lastname, String nim, String password) {
         this.id = id;
-        this.username = username;
-        this.fullname = fullname;
-        this.password = password;
+        this.firstname = firstname;
+        this.lastname = lastname;
         this.nim = nim;
+        this.password = password;
     }
 
     public int getId() {
@@ -32,20 +32,28 @@ public class MahasiswaModel {
         this.id = id;
     }
 
-    public String getUsername() {
-        return username;
+    public String getFirstname() {
+        return firstname;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
     }
 
-    public String getFullname() {
-        return fullname;
+    public String getLastname() {
+        return lastname;
     }
 
-    public void setFullname(String fullname) {
-        this.fullname = fullname;
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
+    public String getNim() {
+        return nim;
+    }
+
+    public void setNim(String nim) {
+        this.nim = nim;
     }
 
     public String getPassword() {
@@ -56,11 +64,4 @@ public class MahasiswaModel {
         this.password = password;
     }
 
-    public String getNim() {
-        return nim;
-    }
-
-    public void setNim(String nim) {
-        this.nim = nim;
-    }
 }
