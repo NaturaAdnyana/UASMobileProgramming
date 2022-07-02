@@ -1,5 +1,6 @@
 package com.naturadoni.uasmobileprogramming;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -39,6 +40,13 @@ public class RegisterActivity extends AppCompatActivity {
         passwordET = findViewById(R.id.password_edittext);
         reTypeET = findViewById(R.id.retype_edittext);
         btnSave = findViewById(R.id.button_save);
+        SharedPreferences sharedPreferences;
+
+        sharedPreferences = getSharedPreferences("user_details", MODE_PRIVATE);
+        sharedPreferences.contains("nim");
+        sharedPreferences.contains("username");
+        sharedPreferences.contains("password");
+
 
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,6 +68,13 @@ public class RegisterActivity extends AppCompatActivity {
                 else {
                     Toast.makeText(RegisterActivity.this, "Password anda masih salah.", Toast.LENGTH_SHORT).show();
                 }
+
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString("nim", nim);
+                editor.putString("username", firstname + ' ' + lastname);
+                editor.putString("password", password);
+                editor.apply();
+
 
 
             }
