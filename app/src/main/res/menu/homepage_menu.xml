@@ -13,5 +13,11 @@
         android:orderInCategory="200"
         app:showAsAction="always"
         android:title="Setting" />
+    <item
+        android:id="@+id/action_logout"
+        android:icon="@drawable/logout_icon"
+        android:orderInCategory="300"
+        app:showAsAction="always"
+        android:title="Setting" />
 
 </menu>

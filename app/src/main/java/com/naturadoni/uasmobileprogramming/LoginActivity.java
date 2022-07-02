@@ -47,17 +47,14 @@ public class LoginActivity extends AppCompatActivity {
                 sharedPreferences.contains("username");
                 sharedPreferences.contains("password");
 
-
                 MahasiswaModel mhs = db.getMahasiswaByNIM(nim);
 
                 if(mhs == null){
-                    Toast.makeText(LoginActivity.this, "mahasiswa tidak ditemukan", Toast.LENGTH_LONG).show();
+                    Toast.makeText(LoginActivity.this, "Anda salah memasukkan username/password", Toast.LENGTH_LONG).show();
                     return;
                 }
 
                 if(mhs.getPassword().equals(password)) {
-                    Toast.makeText(LoginActivity.this, "password benar", Toast.LENGTH_LONG).show();
-
 
                     SharedPreferences.Editor editor = sharedPreferences.edit();
                     editor.putString("nim", mhs.getNim());
@@ -67,8 +64,6 @@ public class LoginActivity extends AppCompatActivity {
 
                     Intent homeIntent = new Intent(LoginActivity.this, HomeActivity.class);
                     startActivity(homeIntent);
-
-
 
                 }
 

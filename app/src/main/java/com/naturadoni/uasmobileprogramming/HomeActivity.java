@@ -1,11 +1,13 @@
 package com.naturadoni.uasmobileprogramming;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
@@ -18,6 +20,7 @@ public class HomeActivity extends AppCompatActivity {
     private String[] mhsStrings;
     private MahasiswaDBHelper db;
     private ArrayAdapter mhsAdapter;
+    SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +40,12 @@ public class HomeActivity extends AppCompatActivity {
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("List Mahasiswa");
+
+        sharedPreferences = getSharedPreferences("user_details", MODE_PRIVATE);
+        String name = sharedPreferences.getString("username", "");
+
+        Toast.makeText(HomeActivity.this, "Welcome, " + name, Toast.LENGTH_LONG).show();
+
     }
 
     @Override
@@ -48,12 +57,19 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
+            case R.id.action_logout:
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.clear();
+                editor.apply();
+                Intent loginActivity = new Intent(HomeActivity.this, com.naturadoni.uasmobileprogramming.LoginActivity.class);
+                startActivity(loginActivity);
+                return true;
+
             case R.id.action_add:
                 Intent registerActivity = new Intent(HomeActivity.this, com.naturadoni.uasmobileprogramming.RegisterActivity.class);
                             startActivity(registerActivity);
-
-
                 return true;
+
             case R.id.action_refresh:
                 mhsStrings = db.getAllMahasiswaFirstname();
                 mhsAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, mhsStrings);
@@ -62,5 +78,10 @@ public class HomeActivity extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        finishAffinity();
     }
 }
