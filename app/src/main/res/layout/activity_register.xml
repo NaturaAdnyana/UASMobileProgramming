@@ -27,7 +27,7 @@
             />
 
         <EditText
-            android:id="@+id/username_edittext"
+            android:id="@+id/firstname_edittext"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="1dp"
@@ -46,7 +46,7 @@
             />
 
         <EditText
-            android:id="@+id/fullname_edittext"
+            android:id="@+id/lastname_edittext"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="1dp"
