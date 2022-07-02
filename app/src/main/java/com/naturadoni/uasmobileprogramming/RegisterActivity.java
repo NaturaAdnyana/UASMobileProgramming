@@ -15,11 +15,11 @@ import com.naturadoni.uasmobileprogramming.mahasiswa.MahasiswaDBHelper;
 import com.naturadoni.uasmobileprogramming.mahasiswa.MahasiswaModel;
 
 public class RegisterActivity extends AppCompatActivity {
-    EditText usernameET, fullnameET, nimET, passwordET;
+    EditText firstNameET, lastNameET, nimET, passwordET, reTypeET;
     Button btnSave;
     MahasiswaDBHelper db;
 
-    String username, fullname, password, nim;
+    String firstname, lastname, nim, password, retype;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,10 +32,11 @@ public class RegisterActivity extends AppCompatActivity {
 
         db = new MahasiswaDBHelper(this);
 
-        usernameET = findViewById(R.id.username_edittext);
-        fullnameET = findViewById(R.id.fullname_edittext);
+        firstNameET = findViewById(R.id.firstname_edittext);
+        lastNameET = findViewById(R.id.lastname_edittext);
         nimET = findViewById(R.id.nim_edittext);
         passwordET = findViewById(R.id.password_edittext);
+        reTypeET = findViewById(R.id.retype_edittext);
         btnSave = findViewById(R.id.button_save);
 
 
@@ -43,16 +44,17 @@ public class RegisterActivity extends AppCompatActivity {
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                username = usernameET.getText().toString();
-                fullname = fullnameET.getText().toString();
-                password = passwordET.getText().toString();
+                firstname = firstNameET.getText().toString();
+                lastname = lastNameET.getText().toString();
                 nim = nimET.getText().toString();
+                password = passwordET.getText().toString();
+                retype = reTypeET.getText().toString();
 
-                MahasiswaModel newMahasiswa = new MahasiswaModel(username, fullname, password, nim);
+                MahasiswaModel newMahasiswa = new MahasiswaModel(firstname, lastname, nim, password);
                 db.addMahasiswa(newMahasiswa);
 
 
-                Toast.makeText(RegisterActivity.this, "Sukses Register", Toast.LENGTH_SHORT).show();
+                Toast.makeText(RegisterActivity.this, "Sukses Register\nSilahkan login", Toast.LENGTH_SHORT).show();
                 finish();
             }
         });
