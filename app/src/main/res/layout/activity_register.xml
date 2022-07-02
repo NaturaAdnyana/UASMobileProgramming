@@ -1,60 +1,129 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp"
     tools:context=".RegisterActivity">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="10dp"
-        android:text="Nama Depan"
-        android:textSize="15sp"
-        android:textColor="@color/primary"
-        />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="16dp"
+        >
 
-    <EditText
-        android:id="@+id/username_edittext"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="1dp"
-        android:hint="Username"
-        android:background="@drawable/border_primary" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:text="Nama Depan"
+            android:textSize="15sp"
+            android:textColor="@color/primary"
+            />
 
-    <EditText
-        android:id="@+id/fullname_edittext"
-        android:layout_marginTop="16dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Full Name" />
+        <EditText
+            android:id="@+id/username_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:padding="15dp"
+            android:hint="First Name"
+            android:background="@drawable/border_primary"/>
 
-    <EditText
-        android:id="@+id/nim_edittext"
-        android:layout_marginTop="16dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="phone"
-        android:hint="NIM" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:text="Nama Belakang"
+            android:textSize="15sp"
+            android:textColor="@color/primary"
+            />
 
-    <EditText
-        android:id="@+id/password_edittext"
-        android:layout_marginTop="16dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:hint="Password" />
+        <EditText
+            android:id="@+id/fullname_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:padding="15dp"
+            android:hint="Last Name"
+            android:background="@drawable/border_primary"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:text="NIM"
+            android:textSize="15sp"
+            android:textColor="@color/primary"
+            />
+
+        <EditText
+            android:id="@+id/nim_edittext"
+            android:layout_marginTop="1dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="phone"
+            android:hint="NIM"
+            android:padding="15dp"
+            android:background="@drawable/border_primary" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:text="Password"
+            android:textSize="15sp"
+            android:textColor="@color/primary"
+            />
+
+        <EditText
+            android:id="@+id/password_edittext"
+            android:layout_marginTop="1dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:hint="Password"
+            android:padding="15dp"
+            android:background="@drawable/border_primary" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:text="Ulangi password"
+            android:textSize="15sp"
+            android:textColor="@color/primary"
+            />
+
+        <EditText
+            android:id="@+id/retype_edittext"
+            android:layout_marginTop="1dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:hint="Ulangi Password"
+            android:padding="15dp"
+            android:background="@drawable/border_primary" />
 
 
-    <Button
-        android:layout_marginTop="64dp"
-        android:text="SIMPAN"
-        android:id="@+id/button_save"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        <Button
+            android:layout_marginTop="64dp"
+            android:text="Registrasi"
+            android:id="@+id/button_save"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            />
 
-</LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

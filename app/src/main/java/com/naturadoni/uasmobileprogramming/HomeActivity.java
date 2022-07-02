@@ -29,7 +29,7 @@ public class HomeActivity extends AppCompatActivity {
 
         db = new MahasiswaDBHelper(this);
 
-        mhsStrings = db.getAllMahasiswaFullname();
+        mhsStrings = db.getAllMahasiswaFirstname();
 
 
         mhsAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, mhsStrings);
@@ -55,7 +55,7 @@ public class HomeActivity extends AppCompatActivity {
 
                 return true;
             case R.id.action_refresh:
-                mhsStrings = db.getAllMahasiswaFullname();
+                mhsStrings = db.getAllMahasiswaFirstname();
                 mhsAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, mhsStrings);
                 mhsListView.setAdapter(mhsAdapter);
                 return true;
