@@ -32,6 +32,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="1dp"
             android:padding="15dp"
+            android:textColorHint="@color/greySecondary"
             android:hint="First Name"
             android:background="@drawable/border_primary"/>
 
@@ -51,6 +52,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="1dp"
             android:padding="15dp"
+            android:textColorHint="@color/greySecondary"
             android:hint="Last Name"
             android:background="@drawable/border_primary"
             />
@@ -71,6 +73,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="phone"
+            android:textColorHint="@color/greySecondary"
             android:hint="NIM"
             android:padding="15dp"
             android:background="@drawable/border_primary" />
@@ -91,6 +94,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
+            android:textColorHint="@color/greySecondary"
             android:hint="Password"
             android:padding="15dp"
             android:background="@drawable/border_primary" />
@@ -111,6 +115,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
+            android:textColorHint="@color/greySecondary"
             android:hint="Ulangi Password"
             android:padding="15dp"
             android:background="@drawable/border_primary" />
@@ -119,6 +124,8 @@
         <Button
             android:layout_marginTop="64dp"
             android:text="Registrasi"
+            android:backgroundTint="@color/primary"
+            android:textColor="@color/white"
             android:id="@+id/button_save"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
