@@ -33,15 +33,12 @@ public class RegisterActivity extends AppCompatActivity {
 
         db = new MahasiswaDBHelper(this);
 
-
         firstNameET = findViewById(R.id.firstname_edittext);
         lastNameET = findViewById(R.id.lastname_edittext);
         nimET = findViewById(R.id.nim_edittext);
         passwordET = findViewById(R.id.password_edittext);
         reTypeET = findViewById(R.id.retype_edittext);
         btnSave = findViewById(R.id.button_save);
-
-
 
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,12 +50,18 @@ public class RegisterActivity extends AppCompatActivity {
                 password = passwordET.getText().toString();
                 retype = reTypeET.getText().toString();
 
-                MahasiswaModel newMahasiswa = new MahasiswaModel(firstname, lastname, nim, password);
-                db.addMahasiswa(newMahasiswa);
+                if (password.equals(retype)){
+                    MahasiswaModel newMahasiswa = new MahasiswaModel(firstname, lastname, nim, password);
+                    db.addMahasiswa(newMahasiswa);
+
+                    Toast.makeText(RegisterActivity.this, "Sukses Register\nSilahkan login", Toast.LENGTH_SHORT).show();
+                    finish();
+                }
+                else {
+                    Toast.makeText(RegisterActivity.this, "Password anda masih salah.", Toast.LENGTH_SHORT).show();
+                }
 
 
-                Toast.makeText(RegisterActivity.this, "Sukses Register\nSilahkan login", Toast.LENGTH_SHORT).show();
-                finish();
             }
         });
     }
