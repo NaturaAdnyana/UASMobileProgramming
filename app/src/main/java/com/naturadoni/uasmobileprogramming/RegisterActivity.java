@@ -15,6 +15,7 @@ import com.naturadoni.uasmobileprogramming.mahasiswa.MahasiswaDBHelper;
 import com.naturadoni.uasmobileprogramming.mahasiswa.MahasiswaModel;
 
 public class RegisterActivity extends AppCompatActivity {
+
     EditText firstNameET, lastNameET, nimET, passwordET, reTypeET;
     Button btnSave;
     MahasiswaDBHelper db;
@@ -32,6 +33,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         db = new MahasiswaDBHelper(this);
 
+
         firstNameET = findViewById(R.id.firstname_edittext);
         lastNameET = findViewById(R.id.lastname_edittext);
         nimET = findViewById(R.id.nim_edittext);
@@ -44,6 +46,7 @@ public class RegisterActivity extends AppCompatActivity {
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 firstname = firstNameET.getText().toString();
                 lastname = lastNameET.getText().toString();
                 nim = nimET.getText().toString();
