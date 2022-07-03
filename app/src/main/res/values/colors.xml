@@ -10,4 +10,5 @@
     <color name="primary">#B22727</color>
     <color name="greySecondary">#BABFC4</color>
     <color name="secondary">#FC8A01</color>
+    <color name="darkgrey">#1f1f1f</color>
 </resources>

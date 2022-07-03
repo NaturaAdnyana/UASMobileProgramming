@@ -3,12 +3,13 @@ package com.naturadoni.uasmobileprogramming;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -18,12 +19,18 @@ import androidx.appcompat.app.AppCompatActivity;
 public class HomeActivity  extends AppCompatActivity {
     LinearLayout btnMhs;
     LinearLayout btnTentang;
+    TextView greetTitle;
+    TextView greetText;
     SharedPreferences sharedPreferences;
+    final Handler handler = new Handler(Looper.getMainLooper());
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        greetTitle = findViewById(R.id.greet_title);
+        greetText = findViewById(R.id.greet_text);
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("Home");
@@ -34,7 +41,8 @@ public class HomeActivity  extends AppCompatActivity {
         sharedPreferences = getSharedPreferences("user_details", MODE_PRIVATE);
         String name = sharedPreferences.getString("username", "");
 
-        Toast.makeText(HomeActivity.this, "Welcome, " + name, Toast.LENGTH_LONG).show();
+//        Toast.makeText(HomeActivity.this, "Welcome, " + name, Toast.LENGTH_LONG).show();
+        greetTitle.setText("Halo " + name + " 👋");
 
         btnMhs.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -52,6 +60,13 @@ public class HomeActivity  extends AppCompatActivity {
                 startActivity(registerIntent);
             }
         });
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                greetText.setText("Ada yang bisa kami bantu?");
+            }
+        },3000);
     }
 
     @Override
