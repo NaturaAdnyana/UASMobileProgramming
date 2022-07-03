@@ -5,21 +5,18 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.ListView;
+import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.naturadoni.uasmobileprogramming.mahasiswa.MahasiswaDBHelper;
-
-public class HomeActivity extends AppCompatActivity {
-    ListView mhsListView;
-    private String[] mhsStrings;
-    private MahasiswaDBHelper db;
-    private ArrayAdapter mhsAdapter;
+public class HomeActivity  extends AppCompatActivity {
+    Button btnMhs;
+    Button btnTentang;
     SharedPreferences sharedPreferences;
 
     @Override
@@ -27,31 +24,39 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        // setup views
-        mhsListView = findViewById(R.id.mahasiswa_listview);
-
-        db = new MahasiswaDBHelper(this);
-
-        mhsStrings = db.getAllMahasiswaFirstname();
-
-
-        mhsAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, mhsStrings);
-        mhsListView.setAdapter(mhsAdapter);
-
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle("List Mahasiswa");
+        actionBar.setTitle("Home");
+
+        btnMhs = findViewById(R.id.btn_mhs);
+        btnTentang = findViewById(R.id.btn_tentang);
 
         sharedPreferences = getSharedPreferences("user_details", MODE_PRIVATE);
         String name = sharedPreferences.getString("username", "");
 
         Toast.makeText(HomeActivity.this, "Welcome, " + name, Toast.LENGTH_LONG).show();
 
+        btnMhs.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                    Intent homeIntent = new Intent(HomeActivity.this, MhsActivity.class);
+                    startActivity(homeIntent);
+            }
+
+        });
+
+        btnTentang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent registerIntent = new Intent(HomeActivity.this, RegisterActivity.class);
+                startActivity(registerIntent);
+            }
+        });
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-       getMenuInflater().inflate(R.menu.homepage_menu, menu);
-       return true;
+        getMenuInflater().inflate(R.menu.homepage_menu, menu);
+        return true;
     }
 
     @Override
@@ -63,17 +68,6 @@ public class HomeActivity extends AppCompatActivity {
                 editor.apply();
                 Intent loginActivity = new Intent(HomeActivity.this, com.naturadoni.uasmobileprogramming.LoginActivity.class);
                 startActivity(loginActivity);
-                return true;
-
-            case R.id.action_add:
-                Intent registerActivity = new Intent(HomeActivity.this, com.naturadoni.uasmobileprogramming.RegisterActivity.class);
-                            startActivity(registerActivity);
-                return true;
-
-            case R.id.action_refresh:
-                mhsStrings = db.getAllMahasiswaFirstname();
-                mhsAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, mhsStrings);
-                mhsListView.setAdapter(mhsAdapter);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
