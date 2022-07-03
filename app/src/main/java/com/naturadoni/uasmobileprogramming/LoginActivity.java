@@ -57,9 +57,13 @@ public class LoginActivity extends AppCompatActivity {
 
                     SharedPreferences.Editor editor = sharedPreferences.edit();
                     editor.putString("nim", mhs.getNim());
+                    editor.putString("firstname", mhs.getFirstname());
                     editor.putString("username", mhs.getFirstname() + ' ' + mhs.getLastname());
                     editor.putString("password", mhs.getPassword());
                     editor.apply();
+
+
+                    Toast.makeText(LoginActivity.this, "Welcome, " + mhs.getFirstname() + ' ' + mhs.getLastname(), Toast.LENGTH_LONG).show();
 
                     Intent homeIntent = new Intent(LoginActivity.this, HomeActivity.class);
                     startActivity(homeIntent);

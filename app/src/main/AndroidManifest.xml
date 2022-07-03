@@ -26,6 +26,15 @@
             android:name=".MhsActivity"
             android:exported="false" />
         <activity
+            android:name=".AboutActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DoniActivity"
+            android:exported="false" />
+        <activity
+            android:name=".NaturaActivity"
+            android:exported="false" />
+        <activity
             android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>

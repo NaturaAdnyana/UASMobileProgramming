@@ -10,7 +10,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
@@ -39,10 +38,9 @@ public class HomeActivity  extends AppCompatActivity {
         btnTentang = findViewById(R.id.btn_tentang);
 
         sharedPreferences = getSharedPreferences("user_details", MODE_PRIVATE);
-        String name = sharedPreferences.getString("username", "");
+        String name = sharedPreferences.getString("firstname", "");
 
-//        Toast.makeText(HomeActivity.this, "Welcome, " + name, Toast.LENGTH_LONG).show();
-        greetTitle.setText("Halo " + name + " 👋");
+        greetTitle.setText("Halo, " + name + "👋");
 
         btnMhs.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -56,7 +54,7 @@ public class HomeActivity  extends AppCompatActivity {
         btnTentang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent registerIntent = new Intent(HomeActivity.this, RegisterActivity.class);
+                Intent registerIntent = new Intent(HomeActivity.this, AboutActivity.class);
                 startActivity(registerIntent);
             }
         });
@@ -66,7 +64,7 @@ public class HomeActivity  extends AppCompatActivity {
             public void run() {
                 greetText.setText("Ada yang bisa kami bantu?");
             }
-        },3000);
+        },4000);
     }
 
     @Override
