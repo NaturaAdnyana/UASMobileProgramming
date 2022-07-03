@@ -86,50 +86,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="10dp"
-            android:text="Password"
-            android:textSize="15sp"
-            android:textColor="@color/primary"
-            />
-
-        <EditText
-            android:id="@+id/password_edittext"
-            android:layout_marginTop="1dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPassword"
-            android:textColor="@color/black"
-            android:textColorHint="@color/greySecondary"
-            android:hint="Password"
-            android:padding="15dp"
-            android:background="@drawable/border_primary" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="10dp"
-            android:text="Ulangi password"
-            android:textSize="15sp"
-            android:textColor="@color/primary"
-            />
-
-        <EditText
-            android:id="@+id/retype_edittext"
-            android:layout_marginTop="1dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPassword"
-            android:textColor="@color/black"
-            android:textColorHint="@color/greySecondary"
-            android:hint="Ulangi Password"
-            android:padding="15dp"
-            android:background="@drawable/border_primary" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="10dp"
             android:text="Tanggal lahir"
             android:textSize="15sp"
             android:textColor="@color/primary"
@@ -184,6 +140,50 @@
             android:textColor="@color/black"
             android:textColorHint="@color/greySecondary"
             android:hint="Masukkan Email"
+            android:padding="15dp"
+            android:background="@drawable/border_primary" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:text="Password"
+            android:textSize="15sp"
+            android:textColor="@color/primary"
+            />
+
+        <EditText
+            android:id="@+id/password_edittext"
+            android:layout_marginTop="1dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:textColor="@color/black"
+            android:textColorHint="@color/greySecondary"
+            android:hint="Password"
+            android:padding="15dp"
+            android:background="@drawable/border_primary" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:text="Ulangi password"
+            android:textSize="15sp"
+            android:textColor="@color/primary"
+            />
+
+        <EditText
+            android:id="@+id/retype_edittext"
+            android:layout_marginTop="1dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:textColor="@color/black"
+            android:textColorHint="@color/greySecondary"
+            android:hint="Ulangi Password"
             android:padding="15dp"
             android:background="@drawable/border_primary" />
 
