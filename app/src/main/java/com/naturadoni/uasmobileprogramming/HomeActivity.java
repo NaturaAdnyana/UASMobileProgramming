@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -15,8 +16,8 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class HomeActivity  extends AppCompatActivity {
-    Button btnMhs;
-    Button btnTentang;
+    LinearLayout btnMhs;
+    LinearLayout btnTentang;
     SharedPreferences sharedPreferences;
 
     @Override
