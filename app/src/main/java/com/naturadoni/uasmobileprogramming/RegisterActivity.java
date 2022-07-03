@@ -4,8 +4,10 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -40,8 +42,13 @@ public class RegisterActivity extends AppCompatActivity {
         passwordET = findViewById(R.id.password_edittext);
         reTypeET = findViewById(R.id.retype_edittext);
         btnSave = findViewById(R.id.button_save);
-        SharedPreferences sharedPreferences;
 
+        Spinner dropdown = findViewById(R.id.jurusan);
+        String[] items = new String[]{"TI - Manajemen Data & Informasi", "TI - Komputer Akuntansi dan Bisnis", "Desain Komunikasi Visual"};
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items);
+        dropdown.setAdapter(adapter);
+
+        SharedPreferences sharedPreferences;
         sharedPreferences = getSharedPreferences("user_details", MODE_PRIVATE);
         sharedPreferences.contains("nim");
         sharedPreferences.contains("username");

@@ -125,6 +125,67 @@
             android:padding="15dp"
             android:background="@drawable/border_primary" />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:text="Tanggal lahir"
+            android:textSize="15sp"
+            android:textColor="@color/primary"
+            />
+
+        <DatePicker
+            android:id="@+id/tgl_lahir"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/greySecondary"
+            android:hint="Tanggal Lahir"
+            android:inputType="date"
+            android:background="@drawable/border_primary"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:text="Jurusan"
+            android:textSize="15sp"
+            android:textColor="@color/primary"
+            />
+
+        <Spinner
+            android:id="@+id/jurusan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:spinnerMode="dropdown"
+            android:background="@android:drawable/btn_dropdown"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:text="Email"
+            android:textSize="15sp"
+            android:textColor="@color/primary"
+            />
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_marginTop="1dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/black"
+            android:textColorHint="@color/greySecondary"
+            android:hint="Masukkan Email"
+            android:padding="15dp"
+            android:background="@drawable/border_primary" />
 
         <Button
             android:layout_marginTop="64dp"
