@@ -105,6 +105,7 @@
                 android:layout_height="match_parent"
                 android:background="@drawable/border_primary"
                 android:hint="Password"
+                android:textColorHint="@color/greySecondary"
                 android:inputType="textPassword"
                 android:textSize="18sp"
                 android:padding="15dp"

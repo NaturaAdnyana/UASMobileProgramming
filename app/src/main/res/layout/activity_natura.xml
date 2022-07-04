@@ -4,7 +4,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center_horizontal"
-    android:padding="10dp">
+    android:padding="10dp"
+    android:background="@color/white">
 
     <ImageView
         android:layout_width="200dp"
@@ -61,6 +62,7 @@
         android:id="@+id/natura_web"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="www.naturaadnyana.com"/>
+        android:text="www.naturaadnyana.com"
+        android:textColor="@color/greySecondary"/>
 
 </LinearLayout>

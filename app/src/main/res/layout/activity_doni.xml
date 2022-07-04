@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center_horizontal"
+    android:background="@color/white"
     android:padding="10dp">
 
     <ImageView
@@ -61,6 +62,8 @@
         android:id="@+id/doni_web"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="www.doniwirawan.com"/>
+        android:text="www.doniwirawan.com"
+        android:textColor="@color/greySecondary"
+        />
 
 </LinearLayout>

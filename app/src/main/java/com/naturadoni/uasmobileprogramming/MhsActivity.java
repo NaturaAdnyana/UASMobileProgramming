@@ -1,6 +1,8 @@
 package com.naturadoni.uasmobileprogramming;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -38,6 +40,8 @@ public class MhsActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("List Mahasiswa");
         actionBar.setDisplayHomeAsUpEnabled(true);
+        ColorDrawable colorDrawable = new ColorDrawable(Color.parseColor("#B22727"));
+        actionBar.setBackgroundDrawable(colorDrawable);
 
     }
 

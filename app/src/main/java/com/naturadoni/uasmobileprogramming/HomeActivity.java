@@ -2,6 +2,8 @@ package com.naturadoni.uasmobileprogramming;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -33,6 +35,8 @@ public class HomeActivity  extends AppCompatActivity {
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("Home");
+        ColorDrawable colorDrawable = new ColorDrawable(Color.parseColor("#B22727"));
+        actionBar.setBackgroundDrawable(colorDrawable);
 
         btnMhs = findViewById(R.id.btn_mhs);
         btnTentang = findViewById(R.id.btn_tentang);

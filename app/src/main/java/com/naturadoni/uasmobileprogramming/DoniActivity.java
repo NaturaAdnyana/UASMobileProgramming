@@ -1,6 +1,8 @@
 package com.naturadoni.uasmobileprogramming;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -25,6 +27,8 @@ public class DoniActivity  extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("Doni Wirawan");
         actionBar.setDisplayHomeAsUpEnabled(true);
+        ColorDrawable colorDrawable = new ColorDrawable(Color.parseColor("#B22727"));
+        actionBar.setBackgroundDrawable(colorDrawable);
 
         githubDoni = findViewById(R.id.doni_github);
         linkedinDoni = findViewById(R.id.doni_linkedin);

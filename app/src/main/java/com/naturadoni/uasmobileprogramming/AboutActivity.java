@@ -2,6 +2,8 @@ package com.naturadoni.uasmobileprogramming;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -30,6 +32,8 @@ public class AboutActivity  extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("Sang Pencipta Saya");
         actionBar.setDisplayHomeAsUpEnabled(true);
+        ColorDrawable colorDrawable = new ColorDrawable(Color.parseColor("#B22727"));
+        actionBar.setBackgroundDrawable(colorDrawable);
 
         btnDoni = findViewById(R.id.btn_doni);
         btnNatura = findViewById(R.id.btn_natura);

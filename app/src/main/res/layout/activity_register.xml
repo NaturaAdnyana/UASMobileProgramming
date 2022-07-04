@@ -98,7 +98,7 @@
             android:textColor="@color/primary"
             />
 
-        <DatePicker
+        <com.naturadoni.uasmobileprogramming.CustomDatePicker
             android:id="@+id/tgl_lahir"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -191,6 +191,7 @@
                 android:layout_height="match_parent"
                 android:background="@drawable/border_primary"
                 android:hint="Password"
+                android:textColorHint="@color/greySecondary"
                 android:inputType="textPassword"
                 android:textSize="18sp"
                 android:padding="15dp"
@@ -239,6 +240,7 @@
                 android:layout_height="match_parent"
                 android:background="@drawable/border_primary"
                 android:hint="Ulangi Password"
+                android:textColorHint="@color/greySecondary"
                 android:inputType="textPassword"
                 android:textSize="18sp"
                 android:padding="15dp"
