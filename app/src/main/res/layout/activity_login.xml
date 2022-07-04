@@ -74,17 +74,43 @@
             android:background="@color/white"
             />
 
-        <EditText
-            android:id="@+id/password_login_edittext"
+<!--        <EditText-->
+<!--            android:id="@+id/password_login_edittext"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="1dp"-->
+<!--            android:padding="15dp"-->
+<!--            android:inputType="textPassword"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:textColorHint="@color/greySecondary"-->
+<!--            android:hint="Password"-->
+<!--            android:background="@drawable/border_primary"/>-->
+
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="1dp"
-            android:padding="15dp"
-            android:inputType="textPassword"
-            android:textColor="@color/black"
-            android:textColorHint="@color/greySecondary"
-            android:hint="Password"
-            android:background="@drawable/border_primary"/>
+            android:backgroundTint="@color/white"
+            app:boxBackgroundColor="@color/white"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/primary"
+            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="0dp"
+            app:hintEnabled="false"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/password_login_edittext"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/border_primary"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:textSize="18sp"
+                android:padding="15dp"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
 
 
         <Button

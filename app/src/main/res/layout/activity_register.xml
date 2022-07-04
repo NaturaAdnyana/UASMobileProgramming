@@ -175,6 +175,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
             android:backgroundTint="@color/white"
             app:boxBackgroundColor="@color/white"
             app:passwordToggleEnabled="true"
@@ -189,7 +190,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/border_primary"
-                android:hint="Ulangi Password"
+                android:hint="Password"
                 android:inputType="textPassword"
                 android:textSize="18sp"
                 android:padding="15dp"
@@ -222,6 +223,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
             android:backgroundTint="@color/white"
             app:boxBackgroundColor="@color/white"
             app:passwordToggleEnabled="true"
