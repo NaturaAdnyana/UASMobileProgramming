@@ -1,6 +1,9 @@
 package com.naturadoni.uasmobileprogramming;
 
 import android.content.SharedPreferences;
+
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -31,6 +34,8 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
 
         ActionBar actionBar = getSupportActionBar();
+        ColorDrawable   colorDrawable = new ColorDrawable(Color.parseColor("#B22727"));
+        actionBar.setBackgroundDrawable(colorDrawable);
         actionBar.setTitle("Registrasi");
         actionBar.setDisplayHomeAsUpEnabled(true);
 
