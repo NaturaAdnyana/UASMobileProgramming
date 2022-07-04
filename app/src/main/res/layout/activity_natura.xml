@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:padding="10dp">
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginVertical="30dp"
+        android:src="@drawable/natura"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="I Wayan Natura Adnyana"
+        android:fontFamily="@font/poppins_bold"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="(20101110)"
+        android:textColor="@color/black"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="Roses are red, violets are blue\nMy screen is weird, I think I deleted system32."
+        android:textColor="@color/black"
+        />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginVertical="5dp"
+        >
+        <ImageView
+            android:id="@+id/natura_github"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/github"
+            android:layout_margin="5dp"/>
+
+        <ImageView
+            android:id="@+id/natura_linkedin"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/linkedin"
+            android:layout_margin="5dp"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/natura_web"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="www.naturaadnyana.com"/>
+
+</LinearLayout>
