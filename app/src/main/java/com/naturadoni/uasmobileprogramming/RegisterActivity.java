@@ -1,11 +1,14 @@
 package com.naturadoni.uasmobileprogramming;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.ContextThemeWrapper;
+import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
@@ -27,6 +30,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.naturadoni.uasmobileprogramming.mahasiswa.MahasiswaDBHelper;
 import com.naturadoni.uasmobileprogramming.mahasiswa.MahasiswaModel;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Locale;
+
 public class RegisterActivity extends AppCompatActivity {
 
     EditText firstNameET, lastNameET, nimET, passwordET, reTypeET;
@@ -35,6 +42,9 @@ public class RegisterActivity extends AppCompatActivity {
     MahasiswaDBHelper db;
 
     String firstname, lastname, nim, password, retype;
+
+    final Calendar myCalendar= Calendar.getInstance();
+    EditText editText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +78,23 @@ public class RegisterActivity extends AppCompatActivity {
         sharedPreferences.contains("username");
         sharedPreferences.contains("password");
 
+        editText=(EditText) findViewById(R.id.tgl_lahir);
+        DatePickerDialog.OnDateSetListener date =new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int day) {
+                myCalendar.set(Calendar.YEAR, year);
+                myCalendar.set(Calendar.MONTH,month);
+                myCalendar.set(Calendar.DAY_OF_MONTH,day);
+                updateLabel();
+            }
+        };
+        editText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new DatePickerDialog(RegisterActivity.this,R.style.date_picker_theme, date,myCalendar.get(Calendar.YEAR),myCalendar.get(Calendar.MONTH),myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+            }
+        });
+
         addProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -98,14 +125,15 @@ public class RegisterActivity extends AppCompatActivity {
                     } else {
                         Toast.makeText(RegisterActivity.this, "Password anda masih salah.", Toast.LENGTH_SHORT).show();
                     }
-                    SharedPreferences.Editor editor = sharedPreferences.edit();
-                    editor.putString("nim", nim);
-                    editor.putString("username", firstname + ' ' + lastname);
-                    editor.putString("password", password);
-                    editor.apply();
                 }
             }
         });
+    }
+
+    private void updateLabel(){
+        String myFormat="MM/dd/yy";
+        SimpleDateFormat dateFormat=new SimpleDateFormat(myFormat, Locale.US);
+        editText.setText(dateFormat.format(myCalendar.getTime()));
     }
 
     @Override

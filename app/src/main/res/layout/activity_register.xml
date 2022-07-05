@@ -96,18 +96,41 @@
             android:text="Tanggal lahir"
             android:textSize="15sp"
             android:textColor="@color/primary"
+            android:layout_gravity="center"
             />
 
-        <com.naturadoni.uasmobileprogramming.CustomDatePicker
+        <EditText
             android:id="@+id/tgl_lahir"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="1dp"
+            android:padding="15dp"
             android:textColor="@color/black"
             android:textColorHint="@color/greySecondary"
             android:hint="Tanggal Lahir"
             android:inputType="date"
-            android:background="@drawable/border_primary"/>
+            android:background="@drawable/border_primary"
+            android:clickable="false"
+            android:cursorVisible="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            />
+
+
+        <!--        <com.naturadoni.uasmobileprogramming.CustomDatePicker-->
+<!--            android:id="@+id/tgl_lahir"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="1dp"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:textColorHint="@color/greySecondary"-->
+<!--            android:hint="Tanggal Lahir"-->
+<!--            android:inputType="date"-->
+<!--            android:background="@drawable/border_primary"-->
+<!--            android:clickable="false"-->
+<!--            android:cursorVisible="false"-->
+<!--            android:focusable="false"-->
+<!--            android:focusableInTouchMode="false"/>-->
 
         <TextView
             android:layout_width="match_parent"
@@ -124,8 +147,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="1dp"
+            android:padding="5dp"
             android:spinnerMode="dropdown"
-            android:background="@android:drawable/btn_dropdown"
+            android:background="@drawable/border_primary"
             />
 
         <TextView
